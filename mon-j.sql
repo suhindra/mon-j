@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 30, 2017 at 06:40 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.9
+-- Host: localhost
+-- Generation Time: Feb 20, 2017 at 10:54 AM
+-- Server version: 5.7.17-0ubuntu0.16.04.1
+-- PHP Version: 7.0.13-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -31,16 +31,8 @@ CREATE TABLE `client` (
   `id_terminal` int(5) NOT NULL,
   `ip_client` varchar(50) NOT NULL,
   `nama_client` varchar(50) NOT NULL,
-  `status_client` enum('Connected','Disconnected','Destination net unreachable','Destination host unreachable','Request timed out') NOT NULL
+  `status_client` enum('Connected','Disconnected','Destination net unreachable','Destination host unreachable','Request timed out') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `client`
---
-
-INSERT INTO `client` (`id_client`, `id_terminal`, `ip_client`, `nama_client`, `status_client`) VALUES
-(1, 1, '192.168.43.1', 'Wifi Hotspot', 'Connected'),
-(2, 1, '127.0.0.1', 'Localhost', 'Disconnected');
 
 -- --------------------------------------------------------
 
@@ -67,16 +59,9 @@ CREATE TABLE `terminal` (
   `nama_terminal` varchar(50) NOT NULL,
   `alamat_terminal` varchar(200) NOT NULL,
   `telp_terminal` varchar(15) NOT NULL,
-  `jml_client` int(5) NOT NULL,
-  `beranda_client` int(5) NOT NULL
+  `jml_client` int(5) DEFAULT NULL,
+  `beranda_client` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `terminal`
---
-
-INSERT INTO `terminal` (`id_terminal`, `nama_terminal`, `alamat_terminal`, `telp_terminal`, `jml_client`, `beranda_client`) VALUES
-(1, 'Random Stasiun', 'Jl. Kaliurang KM 10 Gondangan Sardonoharjo Ngaglik Sleman', '061) 486-664', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -131,17 +116,17 @@ ALTER TABLE `terminal`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id_client` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_client` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-  MODIFY `id_log` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_log` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `terminal`
 --
 ALTER TABLE `terminal`
-  MODIFY `id_terminal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_terminal` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
