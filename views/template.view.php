@@ -233,41 +233,41 @@ Smartphone Framework Langit Inspirasi, Yosef Murya, YM Kusuma Ardhana, Yosef Mur
                         <span>List Stasiun</span>
                     </a>
                 </li>
-                <li><a href="#"><i class="fa fa-th-list"></i><span>Monitoring</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                <li><a href="#"><i class="fa fa-signal"></i><span>Monitoring</span><span class="fa fa-angle-right" style="float: right"></span></a>
                     <ul>
                         <?php foreach($data["stasiunData"] as $stasiun) { ?>
                         <li <?php if($hal=="Monitoring") echo 'class="active"'; ?>  >
                             <a href="<?php echo PATH; ?>?hal=Monitoring&&id=<?=$stasiun->id_terminal?>">
-                                <i class="fa fa-th-large"></i>
+                                <i class="fa fa-server"></i>
                                 <span>Monitoring <?=$stasiun->nama_terminal;?></span>
                             </a>
                         </li>   
                         <?php } ?>
                     </ul>
                 </li>
-                <li><a href="#"><i class="fa fa-th-list"></i><span>Pengaturan</span><span class="fa fa-angle-right" style="float: right"></span></a>
+                <li><a href="#"><i class="fa fa-cog"></i><span>Pengaturan</span><span class="fa fa-angle-right" style="float: right"></span></a>
                   <ul>
                     <li <?php if($hal=="Email") echo 'class="active"'; ?>  >
                         <a href="<?php echo PATH; ?>?hal=Email">
-                            <i class="fa fa-th-large"></i>
+                            <i class="fa fa-envelope"></i>
                             <span>Log Laporan Email</span>
                         </a>
                     </li>   
                     <li <?php if($hal=="Client") echo 'id="menu-home"'; ?>  >
                         <a href="<?php echo PATH; ?>?hal=Client&&action=add">
-                            <i class="fa fa-file-text-o"></i>
+                            <i class="fa fa-server"></i>
                             <span>Add Client</span>
                         </a>
                     </li>
                     <li <?php if($hal=="Stasiun") echo 'id="menu-home"'; ?>  >
                         <a href="<?php echo PATH; ?>?hal=Stasiun&&action=add">
-                            <i class="fa fa-code-fork"></i>
+                            <i class="fa fa-th-list"></i>
                             <span>Add Stasiun</span>
                         </a>
                     </li>
                     <li <?php if($hal=="Logout") echo 'id="menu-home"'; ?>  >
                         <a href="<?php echo PATH; ?>?hal=Logout">
-                            <i class="fa fa-file-powerpoint-o"></i>
+                            <i class="fa fa-sign-out"></i>
                             <span>Logout</span>
                         </a>
                     </li>

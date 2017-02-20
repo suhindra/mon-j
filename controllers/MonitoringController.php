@@ -128,13 +128,13 @@
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'example@gmail.com'; // Email GMAIL anda disini HARUS allowing access to less secure apps
+            $mail->Username = 'suhindrasuhindra@gmail.com'; // Email GMAIL anda disini HARUS allowing access to less secure apps
             $mail->Password = ''; // Katasandi email anda
             $mail->SMTPSecure = 'tls';
              
-            $mail->From = ''; // Email disamakan saja
+            $mail->From = 'suhindrasuhindra@gmail.com'; // Email disamakan saja
             $mail->FromName = 'Monitoring Jaringan';
-            $mail->addAddress(''); // Target email atau email tujuan
+            $mail->addAddress('suhindra@hotmail.co.id'); // Target email atau email tujuan
              
             $mail->WordWrap = 50;
             $mail->isHTML(true);
