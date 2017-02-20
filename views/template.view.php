@@ -298,20 +298,14 @@ $(".sidebar-icon").click(function() {
             });
 </script>
 
-<script>
-$(document).ready(function() {
-    $("#loaderIcon").show();
-    var interval = setInterval(function() {
-        $.ajax({
-             url: 'view/pingger/ping-daop3.php?id=<?php echo $id_blok; if (isset($pn)) { echo $pn_link;}; ?>',
-             success: function(data) {
-                $("#loaderIcon").hide();
-                $('#monitoring').html(data);
-             }
-        });
-    }, 3000);
-});
+<script src="<?php echo PATH; ?>assets/admin/js/input-mask/jquery.inputmask.js"></script>
+<script src="<?php echo PATH; ?>assets/admin/js/input-mask/jquery.inputmask.extensions.js"></script>
+<script type="text/javascript">
+$(function () {
+    $("[data-mask]").inputmask();
+    });
 </script>
+
 <!--scrolling js-->
         <script src="<?php echo PATH; ?>assets/admin/js/jquery.nicescroll.js"></script>
         <script src="<?php echo PATH; ?>assets/admin/js/scripts.js"></script>
